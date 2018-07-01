@@ -1,0 +1,89 @@
+<HTML>
+  <HEAD>
+     <TITLE>pmt_project Program Web Site
+     </TITLE>
+
+     <META NAME="description" CONTENT="pmt_site Program"> 
+
+     <META NAME="keywords" CONTENT="engineering software hardware pmt_site pmt_project ifc c17 secure internet server linux research not-for-profit neural networks">
+
+    <META NAME="author" CONTENT="R. Scott Davis">
+
+    <SCRIPT LANUGAGE="JavaScript">
+      
+      function TOfunc() {
+      TO = window.setTimeout( "TOfunc()", 1000 );
+      }
+      
+      function scroll_status (seed) {
+      var msg = "Institute for Software Research is a not-for-profit organization performing research in a variety of innovative technologies for the future."
+      var out = " ";
+      var c = 1;
+      if (150 < seed) {
+      seed--;
+      var cmd="scroll_status(" + seed + ")";
+      timerTwo = window.setTimeout(cmd, 25);
+      }
+      else if (seed <= 150 && 0 < seed) {
+      for (c=0 ; c < seed ; c++) {
+      out+=" ";
+      }
+      out+=msg;
+      seed--;
+      var cmd="scroll_status(" + seed + ")";
+      window.status=out;
+      timerTwo=window.setTimeout(cmd,25);
+      }
+      else if (seed <= 0) {
+      if (-seed < msg.length) {
+      out+=msg.substring(-seed,msg.length);
+      seed--;
+      var cmd="scroll_status(" + seed + ")";
+      window.status=out;
+      timerTwo=window.setTimeout(cmd,25);
+      }
+      else {
+      window.status=" ";
+      timerTwo=window.setTimeout("scroll_status(150)",25);
+      }
+      }
+      }
+      
+      function setTimers() {
+      timerONE=window.setTimeout('scroll_status(100)',50);
+      TO = setTimeout( 'TOfunc()', 1000 );
+      }
+      
+      /*setTimers();*/
+      
+    </SCRIPT>
+  </HEAD>
+
+  <FRAMESET COLS="130,*" border="0">
+    <FRAME SRC="/pmt_site-cgi-bin/optionsBar.pyc"
+      NAME="options"
+      FRAMEBORDER=0
+      MARGINHEIGHT=0
+      MARGINWIDTH=0
+      SCROLLING = "AUTO"
+      NORESIZE>
+      
+      <FRAMESET ROWS="65,*" border="0">
+	<FRAME SRC="header.html"
+	  MARGINHEIGHT=0
+	  FRAMEBORDER=0
+	  NAME="header"
+	  SCROLLING = "NO"
+	  NORESIZE>
+
+          <FRAME SRC="siteInfo.html"
+	    MARGINHEIGHT=0
+	    MARGINWIDTH=5
+	    FRAMEBORDER=0
+	    NAME="siteInfo"
+	    SCROLLING="AUTO"
+	    NORESIZE>
+      </FRAMESET>	
+  </FRAMESET>
+  
+</HTML>

@@ -1,0 +1,47 @@
+<HTML>
+  <HEAD>	
+<script>
+  function gosuprt(form) {
+    var tU = new Array();
+    tU[0]="http://www.isrparc.org/program_overview.html";
+    tU[1]="http://www.isrparc.org/save.html";
+    tU[2]="http://www.isrparc.org/c17.html";
+    tU[3]="http://www.isrparc.org/ivv.html";
+    tU[4]="http://www.isrparc.org/cave.html";
+    tU[5]="http://www.isrparc.org/spyball.html";
+
+    if (form.sel_URL.selectedIndex < 0) {
+      parent.document.location.href = tU[form.sel_URL.selectedIndex];
+    }
+    else {
+      parent.frames[3].document.location.href = tU[form.sel_URL.selectedIndex];
+    }
+  }
+
+  function gotosite(site) {
+    if (site != "") {
+       parent.frames[3].location = site;
+    }
+  }
+</script>
+
+</HEAD>
+<BODY bgcolor=#000080>
+<form> 
+
+<TABLE BORDER=0>
+<TR>
+<td><img src="/icons/headermap.gif"></td> 
+<TD>&nbsp;&nbsp;&nbsp;</TD><TD>
+<FONT SIZE=+0 COLOR="white">
+</TD></TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>
+
+
+
+
+
+
