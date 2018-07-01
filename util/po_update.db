@@ -1,0 +1,190 @@
+
+create sequence po_id_seq increment 1 start 1;
+create sequence inv_id_seq increment 1 start 1;
+
+
+CREATE TABLE po (
+    id character varying(4) NOT NULL,
+    po_number character varying(15),
+    description character varying(1024),
+    po_gist character varying(20),
+    revision_number character varying(5),
+    billing_address character varying(500),
+    shipping_address character varying(500),
+    date_requested date,
+    amount_requested character varying(12),
+    date_needed_by date,
+    requisitioner_username character varying(8),
+    requisitioner_password character varying(8),
+    requisitioner_signature character varying(40),
+    requisitioner_signature_functio character varying(5),
+    payment_method character varying(20),
+    vendor_name character varying(40),
+    vendor_address character varying(100),
+    vendor_city_state_zip character varying(100),
+    vendor_contact character varying(40),
+    vendor_phone character varying(12),
+    vendor_ext character varying(5),
+    vendor_fax character varying(12),
+    project_id character varying(20),
+    line_item character varying(20),
+    unit_price character varying(12),
+    total_unit_price character varying(12),
+    subtotal character varying(12),
+    shipping_handling character varying(12),
+    tax_exempt character varying(12),
+    po_total character varying(12),
+    quote_number character varying(10),
+    direct_project_charge_number character varying(14),
+    direct_project_charge_amount character varying(12),
+    direct_resource_authority_usern character varying(8),
+    direct_resource_authority_passw character varying(8),
+    direct_resource_authority_signa character varying(40),
+    requisitioner_sig_function character varying(5),
+    direct_ra_username character varying(8),
+    direct_ra_password character varying(8),
+    direct_ra_signature character varying(40),
+    direct_ra_signature_function character varying(5),
+    direct_ra_signature_date date,
+    indirect_proj_charge_number character varying(11),
+    indirect_proj_charge_amount character varying(12),
+    indirect_ra_username character varying(8),
+    indirect_ra_password character varying(8),
+    indirect_ra_signature character varying(40),
+    indirect_ra_signature_function character varying(5),
+    indirect_ra_signature_date date,
+    department_exec_username character varying(8),
+    department_exec_password character varying(8),
+    department_exec_signature character varying(40),
+    department_exec_sig_function character varying(5),
+    department_exec_sig_date date,
+    corporate_officer_username character varying(8),
+    corporate_officer_password character varying(8),
+    corporate_officer_signature character varying(40),
+    corp_officer_sig_function character varying(5),
+    corporate_officer_sig_date date,
+    comments character varying(1024),
+    po_math_checked_by_username character varying(8),
+    po_math_checked_by_password character varying(8),
+    po_math_checked_by_signature character varying(40),
+    po_math_checked_by_sig_function character varying(5),
+    purchase_ordered_by_username character varying(8),
+    purchase_ordered_by_password character varying(8),
+    purchase_ordered_by_signature character varying(40),
+    purchase_ordered_by_sig_func character varying(5),
+    purchase_ordered_date date,
+    purchase_received_by_username character varying(8),
+    purchase_received_by_password character varying(8),
+    purchase_received_by_signature character varying(40),
+    purchase_received_by_sig_func character varying(5),
+    purchase_received_date date,
+    date_invoice_received date,
+    invoice_number character varying(15),
+    invoice_date date,
+    inv_math_checked_by_username character varying(8),
+    inv_math_checked_by_password character varying(8),
+    inv_math_checked_by_signature character varying(40),
+    inv_math_checked_by_sig_func character varying(5),
+    check_number character varying(4),
+    check_date date,
+    ap_entered_by_username character varying(8),
+    ap_entered_by_password character varying(8),
+    ap_entered_by_signature character varying(40),
+    ap_entered_by_sig_function character varying(5),
+    property_id_number character varying(20),
+    prop_id_assigned_by_username character varying(8),
+    prop_id_assigned_by_password character varying(8),
+    prop_id_assigned_by_signature character varying(40),
+    prop_id_assigned_by_sig_func character varying(5),
+    date_property_id_assigned date,
+    property_location character varying(50),
+    requisitioner character varying(50),
+    check_amount character varying(12),
+    check_mailed_date date
+);
+
+
+CREATE TABLE inventory (
+    id character varying(4),
+    po_id character varying(4),
+    po_number character varying(10),
+    po_project_id character varying(20),
+    project_id character varying(20),
+    line_item character varying(20),
+    quantity character varying(5),
+    description character varying(1024),
+    unit_price character varying(12),
+    total_unit_price character varying(12),
+    subtotal character varying(12),
+    shipping_handling character varying(12),
+    tax_exempt character varying(12),
+    po_total character varying(12),
+    quote_number character varying(12),
+    property_id_number character varying(20),
+    prop_id_assigned_by_username character varying(8),
+    prop_id_assigned_by_password character varying(8),
+    prop_id_assigned_by_signature character varying(40),
+    prop_id_assigned_by_sig_func character varying(5),
+    date_property_id_assigned date,
+    property_location character varying(50),
+    serial_number character varying(20),
+    part_number character varying(20),
+    category character varying(22)
+);
+
+
+CREATE TABLE po_payment_method (
+    payment_method character varying(20)
+);
+
+
+COPY po_payment_method (payment_method) FROM stdin;
+COD
+Check Request
+Prepayment Check
+American Express
+Visa
+\.
+
+
+CREATE TABLE po_line_item (
+    line_item character varying(20)
+);
+
+
+COPY po_line_item (line_item) FROM stdin;
+Equipment
+Software
+Miscellaneous
+Training
+Travel
+\.
+
+CREATE TABLE shipping_addresses (
+    shipping_address character varying(80)
+);
+
+
+COPY shipping_addresses (shipping_address) FROM stdin;
+119 Roush Circle, Industrial Park Road, Fairmont, WV 26554
+320 Adams Street, Fairmont, WV 26555
+2500 Fairmont Avenue, Suite 734, Fairmont, WV 26555
+31 Rodeo Drive, Fairmont, WV 26554
+\.
+
+
+
+REVOKE ALL ON TABLE po FROM PUBLIC;
+GRANT ALL ON TABLE po TO usr;
+
+REVOKE ALL ON TABLE inventory FROM PUBLIC;
+GRANT ALL ON TABLE inventory TO usr;
+
+REVOKE ALL ON TABLE po_payment_method FROM PUBLIC;
+GRANT ALL ON TABLE po_payment_method TO usr;
+
+REVOKE ALL ON TABLE po_line_item FROM PUBLIC;
+GRANT ALL ON TABLE po_line_item TO usr;
+
+REVOKE ALL ON TABLE shipping_addresses FROM PUBLIC;
+GRANT ALL ON TABLE shipping_addresses TO usr;

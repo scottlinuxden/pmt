@@ -1,0 +1,28 @@
+
+INSERT INTO project_info (id, name, address_line_1, address_line_2, city, state, zip, email, phone_number_voice, phone_number_fax) VALUES ('1', 'ISR', '320 Adams Street', 'PO Box 2720', 'Fairmont', 'WV', '26554', 'support@isrparc.org', '304-368-9300', '304-534-4106');
+
+CREATE FUNCTION project_members_id_max() RETURNS int AS 'SELECT max(int4(id)) FROM project_members' LANGUAGE 'sql';
+
+CREATE FUNCTION pai_id_max() RETURNS int AS 'SELECT max(int4(id)) FROM pai' LANGUAGE 'sql';
+
+CREATE FUNCTION ecp_id_max() RETURNS int AS 'SELECT max(int4(id)) FROM ecp' LANGUAGE 'sql';
+
+CREATE FUNCTION spr_id_max() RETURNS int AS 'SELECT max(int4(id)) FROM spr' LANGUAGE 'sql';
+
+CREATE FUNCTION task_id_max() RETURNS int AS 'SELECT max(int4(id)) FROM task' LANGUAGE 'sql';
+
+
+COPY us_states FROM '{PWD}/us_states.dat' USING DELIMITERS '|';
+COPY member_roles FROM '{PWD}/member_roles.dat' USING DELIMITERS '|';
+COPY action_item_types FROM '{PWD}/action_item_types.dat' USING DELIMITERS '|';
+COPY dispositions FROM '{PWD}/dispositions.dat' USING DELIMITERS '|';
+COPY ecp_prefixes FROM '{PWD}/ecp_prefixes.dat' USING DELIMITERS '|';
+COPY ecp_statuses FROM '{PWD}/ecp_statuses.dat' USING DELIMITERS '|';
+COPY ecp_types FROM '{PWD}/ecp_types.dat' USING DELIMITERS '|';
+COPY problem_duplications FROM '{PWD}/problem_duplications.dat' USING DELIMITERS '|';
+COPY signature_functions FROM '{PWD}/signature_functions.dat' USING DELIMITERS '|';
+COPY spr_categories FROM '{PWD}/spr_categories.dat' USING DELIMITERS '|';
+COPY spr_prefixes FROM '{PWD}/spr_prefixes.dat' USING DELIMITERS '|';
+COPY spr_priorities FROM '{PWD}/spr_priorities.dat' USING DELIMITERS '|';
+COPY spr_statuses FROM '{PWD}/spr_statuses.dat' USING DELIMITERS '|';
+

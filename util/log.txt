@@ -1,0 +1,26 @@
+ERROR:  CREATE DATABASE: database "pmtdemo" already exists
+createdb: database creation failed
+ERROR:  CREATE USER: user name "pmtdemo" already exists
+createuser: creation of user "pmtdemo" failed
+/etc/aliases: line 68: pmtdemo_document_maintenance... Warning: duplicate alias name pmtdemo_document_maintenance
+/etc/aliases: 45 aliases, longest 20 bytes, 563 bytes total
+ERROR:  CREATE DATABASE: database "pmtdemo" already exists
+createdb: database creation failed
+ERROR:  CREATE USER: user name "pmtdemo" already exists
+createuser: creation of user "pmtdemo" failed
+/etc/aliases: line 68: pmtdemo_document_maintenance... Warning: duplicate alias name pmtdemo_document_maintenance
+/etc/aliases: line 69: pmtdemo_document_maintenance... Warning: duplicate alias name pmtdemo_document_maintenance
+/etc/aliases: 46 aliases, longest 20 bytes, 611 bytes total
+ERROR:  CREATE DATABASE: database "pmtdemo" already exists
+createdb: database creation failed
+ERROR:  CREATE USER: user name "pmtdemo" already exists
+createuser: creation of user "pmtdemo" failed
+/etc/aliases: line 68: pmtdemo_document_maintenance... Warning: duplicate alias name pmtdemo_document_maintenance
+/etc/aliases: 45 aliases, longest 20 bytes, 563 bytes total
+ERROR:  CREATE DATABASE: database "pmtdemo" already exists
+createdb: database creation failed
+ERROR:  CREATE USER: user name "pmtdemo" already exists
+createuser: creation of user "pmtdemo" failed
+/etc/aliases: line 68: pmtdemo_document_maintenance... Warning: duplicate alias name pmtdemo_document_maintenance
+/etc/aliases: line 69: pmtdemo_document_maintenance... Warning: duplicate alias name pmtdemo_document_maintenance
+/etc/aliases: 46 aliases, longest 20 bytes, 611 bytes total

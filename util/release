@@ -1,0 +1,17 @@
+#!/bin/sh
+
+SITES="save c17 buav cuav biometrics spyball isr ivvnn aam"
+
+if [ $# -lt 1 ] ; then
+	echo "usage: $0 <files>"
+	exit 1
+fi
+
+for site in ${SITES} ; do
+        currDir=/home/$site/cgi-bin/
+	if [ -d $currDir ] ; then
+		echo cp $* $currDir
+	else
+		echo "$0: directory <$currDir> does not exist ..."
+	fi
+done

@@ -1,0 +1,27 @@
+create table "priviledges"
+(
+	"member_username" character varying(8) NOT NULL,
+	"upload" bool default 'f',
+	"del_docs" bool default 'f',
+	"edit_details" bool default 'f',
+	"list_docs" bool default 'f',
+	"create_pai" bool default 'f',
+	"del_pai" bool default 'f',
+	"pai_list" bool default 'f',
+	"create_spr" bool default 'f',
+	"del_spr" bool default 'f',
+	"spr_list" bool default 'f',
+	"create_ecp" bool default 'f',
+	"del_ecp" bool default 'f',
+	"ecp_list" bool default 'f',
+	"folder_admin" bool default 'f',
+	"user_admin" bool default 'f',
+	"project_data" bool default 'f',
+	"cvs_web" bool default 'f',
+	"cvs_export" bool default 'f',
+	"cvs_all" bool default 'f'
+);
+
+insert into priviledges ( member_username ) 
+	select member_username 
+	from project_members;
