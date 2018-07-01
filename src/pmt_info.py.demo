@@ -1,0 +1,21 @@
+#
+# COPYRIGHT:
+#   Copyright (C) 1999 LinuXden, All Rights Reserved
+#   Copright Statement at http://www.linuxden.com/copyrighted_apps.html
+#
+# AUTHOR: 
+#   R. Scott Davis
+#
+# CONTACT:
+#   R. Scott Davis
+#   E-mail: rsdavis@linuxden.com
+#   Voice:  304.534.3031
+#
+
+
+pmt_info = {}
+pmt_info['db_name'] = 'demo'
+pmt_info['domain_name'] = 'www.isrparc.org'
+pmt_info['browser_username'] = 'usrdemo'
+pmt_info['browser_password'] = 'usr1demo'
+pmt_info['help_file'] = 'help.html'
