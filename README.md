@@ -1,5 +1,5 @@
 # pmt
-Project Management Tool Suite
+Web-based Project Management Tool Suite
 Web based project management tool developed in Python that can be customed for your project site.
 Contains several project management applications to manage:
 - Contacts
